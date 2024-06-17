@@ -11,16 +11,6 @@ function Grant-FullControl {
     }
 }
 
-# Function to clear Internet Explorer temporary files
-function Clear-InternetExplorerTempFiles {
-    try {
-        RunDll32.exe InetCpl.cpl,ClearMyTracksByProcess 255
-        Write-Output "Internet Explorer temporary files cleared successfully."
-    } catch {
-        Write-Output "Failed to clear Internet Explorer temporary files - $($_.Exception.Message)"
-    }
-}
-
 # Function to clear Edge temporary files
 function Clear-EdgeTempFiles {
     try {
